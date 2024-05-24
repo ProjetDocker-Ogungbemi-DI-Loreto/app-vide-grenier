@@ -22,13 +22,13 @@ services:
     image: mysql:8
     container_name: ${PROJECT_NAME}_db
     environment:
-      MYSQL_DATABASE : db-vide-grenier
-      MYSQL_USER : vide-grenier
-      MYSQL_PASSWORD: vide-grenier
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: "db-vide-grenier"
+      MYSQL_USER: "vide-grenier"
+      MYSQL_PASSWORD: "vide-grenier"
+      MYSQL_ROOT_PASSWORD: "root"
 
     volumes:
-      - "db_data:/var/lib/mysql"
+      - "bdd_data:/var/lib/mysql"
 
 
   adminer:
@@ -39,4 +39,4 @@ services:
     depends_on:
       - db
 volumes:
-  db_data:
+  bdd_data:
