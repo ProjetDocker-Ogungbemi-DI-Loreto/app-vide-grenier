@@ -24,6 +24,19 @@
                     Créer un compte
                 </div>
                 <div class="l-form">
+                    <!-- Display flash messages -->
+                    {% if flash.success is defined %}
+                    {% for message in flash.success %}
+                    <div class="alert alert-success">{{ message }}</div>
+                    {% endfor %}
+                    {% endif %}
+
+                    {% if flash.error is defined %}
+                    {% for message in flash.error %}
+                    <div class="alert alert-danger">{{ message }}</div>
+                    {% endfor %}
+                    {% endif %}
+                    <!-- End display flash messages -->
                     <form method="post" action="">
                         <div class="form-group">
                             <label for="username">Nom d'utilisateur</label>
