@@ -1085,8 +1085,8 @@ video {
       .single-v-footer-switch > a.active span, .single-v-footer-switch > a.active i::before {
         color: #ea2c5a; }
 
-.cb-content {
-  width: 130% !important; }
+/* .cb-content {
+  width: 130% !important; } */
 
 /*
 * Content Index END
@@ -1265,9 +1265,23 @@ ul.menu {
   text-align: right;
   margin-top: 25px; }
   .loginsignup a {
-    color: #637076; }
+    color: #637076;  
+  }
     .loginsignup a:hover {
       text-decoration: underline; }
+.loginsignup.pull-right {
+  display: flex;
+  gap: 2rem;
+}
+
+.base-nav {
+  display: flex;
+  flex-direction: row;
+}
+
+.base-nav > div:nth-last-child(2) {
+  flex-grow: 1;
+}
 
 .navbar-brand {
   padding: 12px 15px; }

@@ -29,23 +29,23 @@
     <div class="row">
         <div class="navbar-container">
             <div class="container">
-                <div class="row">
-                    <div class="col-xs-3 visible-xs">
+                <div class="row base-nav">
+                    <div class="visible-xs">
                         <a href="#" class="btn-menu-toggle"><i class="cv cvicon-cv-menu"></i></a>
                     </div>
-                    <div class="col-lg-1 col-sm-2 col-xs-6">
+                    <div class="">
                         <a class="navbar-brand" href="/">
                             <img src="/images/logo.png" alt="Vide Grenier en ligne" class="logo" />
                             <span>Vide Grenier en ligne</span>
                         </a>
                     </div>
-                    <div class="col-lg-3 col-sm-10 hidden-xs">
+                    <div class="hidden-xs">
                         <ul class="list-inline menu">
                             <li class="color-active"><a href="/product">Déposer une annonce</a></li>
                         </ul>
                     </div>
 
-                    <div class="col-lg-6 col-sm-8 col-xs-3">
+                    <div class="">
                         <!--<form action="search.html" method="post">
                             <div class="topsearch">
                                 <i class="cv cvicon-cv-cancel topsearch-close"></i>
@@ -60,7 +60,7 @@
 
                     {% if user is not null %}
 
-                    <div class="col-lg-2 col-sm-4 hidden-xs">
+                    <div class="hidden-xs">
                         <div class="selectuser pull-left">
                             <div class="btn-group pull-right dropdown">
                                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -77,9 +77,10 @@
                     </div>
 
                     {% else %}
-                    <div class="col-lg-2 col-sm-12 hidden-xs">
+                    <div class="hidden-xs">
                         <div class="loginsignup pull-right">
-                            <a href="/login">Connexion</a> . <a href="/register">Inscription</a>
+                            <a href="/login">Connexion</a>
+                            <a href="/register">Inscription</a>
                         </div>
                         <div class="clearfix"></div>
                     </div>
