@@ -9,7 +9,7 @@ use Exception;
 use App\Utility;
 
 /**
- * User Model:
+ * Users Model:
  */
 class User extends Model {
 
@@ -47,19 +47,20 @@ class User extends Model {
 
 
     /**
-     * ?
+     * Login user
      * @access public
-     * @return string|boolean
+     * @param int $id
+     * @return array|false
      * @throws Exception
      */
-    public static function login() {
+    public static function login($id) {
         $db = static::getDB();
 
-        $stmt = $db->prepare('SELECT * FROM articles WHERE articles.id = ? LIMIT 1');
+        $stmt = $db->prepare('SELECT * FROM users WHERE users.id = ? LIMIT 1');
 
         $stmt->execute([$id]);
 
-        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        return $stmt->fetch(\PDO::FETCH_ASSOC);
     }
 
 
