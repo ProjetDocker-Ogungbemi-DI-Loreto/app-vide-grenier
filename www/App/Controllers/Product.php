@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\Articles;
 use App\Utility\Upload;
+use App\Utility\Flash;
 use \Core\View;
 
 /**
@@ -18,13 +19,33 @@ class Product extends \Core\Controller
      */
     public function indexAction()
     {
-
         if(isset($_POST['submit'])) {
 
             try {
                 $f = $_POST;
 
-                // TODO: Validation
+                // Validation
+                if (empty($f['name'])) {
+                    Flash::error('Le titre est requis.');
+                }
+                if (empty($f['description'])) {
+                    Flash::error('La description est requise.');
+                }
+                if (empty($_FILES['picture']['name'])) {
+                    Flash::error('L\'image est requise.');
+                }
+                if (empty($f['city'])) {
+                    Flash::error('La ville est requise.');
+                }
+
+                $flashMessages = Flash::get();
+                if (!empty($flashMessages['error'])) {
+                    // Reload the form with error messages
+                    View::renderTemplate('Product/Add.html', [
+                        'flash' => $flashMessages
+                    ]);
+                    return;
+                }
 
                 $f['user_id'] = $_SESSION['user']['id'];
                 $id = Articles::save($f);
@@ -34,8 +55,9 @@ class Product extends \Core\Controller
                 Articles::attachPicture($id, $pictureName);
 
                 header('Location: /product/' . $id);
+                exit;
             } catch (\Exception $e){
-                    var_dump($e);
+                var_dump($e);
             }
         }
 

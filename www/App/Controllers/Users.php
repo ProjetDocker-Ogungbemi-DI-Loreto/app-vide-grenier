@@ -28,7 +28,7 @@ class Users extends \Core\Controller
 
             // Validation
             if (empty($f['email']) || empty($f['password'])) {
-                Flash::error('Email et mot de passe sont requis.');
+                Flash::error('L\'Email ou le mot de passe sont requis.');
                 View::renderTemplate('User/login.html', ['flash' => Flash::get()]);
                 return;
             }
@@ -38,7 +38,7 @@ class Users extends \Core\Controller
                 header('Location: /account');
                 exit;
             } else {
-                Flash::error('Email ou mot de passe incorrect.');
+                Flash::error('L\'Email ou le mot de passe incorrect.');
             }
         }
 
@@ -120,7 +120,7 @@ class Users extends \Core\Controller
     {
         try {
             if (!isset($data['email'])) {
-                throw new Exception('Email est requis.');
+                throw new Exception('L\'Email est requis.');
             }
 
             $user = User::getByLogin($data['email']);
