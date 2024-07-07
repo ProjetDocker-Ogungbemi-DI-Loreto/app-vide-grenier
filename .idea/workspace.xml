@@ -4,18 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6cd284f8-ac51-422d-9940-5c45a8f62f2e" name="Changes" comment="fix(model):connection string">
-      <change afterPath="$PROJECT_DIR$/www/App/Utility/Flash.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vide-grenier-en-ligne-master.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vide-grenier-en-ligne-master.iml" afterDir="false" />
+    <list default="true" id="6cd284f8-ac51-422d-9940-5c45a8f62f2e" name="Changes" comment="fix(controller,view,models,utility):implementation de tous les TO/DO dans les fichiers login et regsiter #3, #9, #12, #13,">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/App/Controllers/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/App/Controllers/Users.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/App/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/App/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/App/Views/User/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/App/Views/User/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/App/Views/User/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/App/Views/User/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/public/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/public/storage/46.png" beforeDir="false" afterPath="$PROJECT_DIR$/www/public/storage/46.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/App/Controllers/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/App/Controllers/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/App/Controllers/Users.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/App/Controllers/Users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/App/Views/Product/Add.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/App/Views/Product/Add.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +58,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "fix/login-register",
+    "git-widget-placeholder": "fix/error-ajout-article",
     "last_opened_file_path": "C:/Users/ogung/Documents/COURS_CESI_DI_22_24/Projet4-Docker/vide-grenier-en-ligne-master",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -91,6 +86,8 @@
       <option name="presentableId" value="Default" />
       <updated>1716464103873</updated>
       <workItem from="1716464107045" duration="20486000" />
+      <workItem from="1720170431095" duration="9140000" />
+      <workItem from="1720279945953" duration="1231000" />
     </task>
     <task id="LOCAL-00001" summary="fix(model):connection string">
       <option name="closed" value="true" />
@@ -113,6 +110,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fix(model):connection string" />
