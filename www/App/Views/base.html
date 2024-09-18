@@ -123,7 +123,7 @@
 
             </ul>
         </div>
-        <a href="#" class="btn mobile-menu-logout">Déconnexion</a>
+        <a href="/logout" class="btn mobile-menu-logout">Déconnexion</a>
     </div>
 </div>
 
@@ -169,8 +169,29 @@
     <script src="/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script>
     <script src="/js/custom.js"></script>
+{% block javascript %}
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Select all flash messages
+        const flashMessages = document.querySelectorAll('.flash-message');
 
-    {% block javascript %}
-    {% endblock %}
+        // Loop through each flash message and set a timeout
+        flashMessages.forEach(function(flashMessage) {
+            // Wait 6 seconds (6000 milliseconds)
+            setTimeout(function() {
+                // Add fade-out effect
+                flashMessage.style.transition = "opacity 0.5s ease";
+                flashMessage.style.opacity = "0";
+
+                // Remove the message from the DOM after the fade-out effect
+                setTimeout(function() {
+                    flashMessage.remove();
+                }, 500); // Wait for fade-out to finish (0.5s)
+            }, 6000); // Time before fade-out (6 seconds)
+        });
+    });
+</script>
+{% endblock %}
+
 </body>
 </html>

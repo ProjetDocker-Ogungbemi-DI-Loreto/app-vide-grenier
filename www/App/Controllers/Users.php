@@ -23,6 +23,24 @@ class Users extends \Core\Controller
      */
     public function loginAction()
     {
+        // Check if the user has a remember_me cookie
+        if (isset($_COOKIE['remember_me']) && !isset($_SESSION['user'])) {
+            // Fetch user by ID from cookie
+            $user = User::getById($_COOKIE['remember_me']);
+
+            if ($user) {
+                // Automatically log the user in using the cookie
+                $_SESSION['user'] = [
+                    'id' => $user['id'],
+                    'username' => $user['username'],
+                ];
+                // Redirect to account page
+                header('Location: /account');
+                exit;
+            }
+        }
+
+        // Process the login form submission
         if (isset($_POST['submit'])) {
             $f = $_POST;
 
@@ -44,6 +62,7 @@ class Users extends \Core\Controller
 
         View::renderTemplate('User/login.html', ['flash' => Flash::get()]);
     }
+
 
     /**
      * Page de création de compte
@@ -133,6 +152,7 @@ class Users extends \Core\Controller
                 setcookie('remember_me', $user['id'], time() + (86400 * 30), "/"); // 30 jours
             }
 
+            // Crée une session utilisateur
             $_SESSION['user'] = [
                 'id' => $user['id'],
                 'username' => $user['username'],
@@ -145,6 +165,7 @@ class Users extends \Core\Controller
             return false;
         }
     }
+
 
     /**
      * Logout: Delete cookie and session. Returns true if everything is okay,

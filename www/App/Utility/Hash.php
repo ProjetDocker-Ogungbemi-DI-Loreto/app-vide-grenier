@@ -33,4 +33,6 @@ class Hash {
         return(self::generate(uniqid()));
     }
 
+
+
 }

@@ -2468,3 +2468,8 @@ footer {
 body > *:not(footer), footer > * {
   max-width: 1365px;
 }
+
+.flash-message {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
