@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6cd284f8-ac51-422d-9940-5c45a8f62f2e" name="Changes" comment="fix(controller,view,models,utility):implementation de tous les TO/DO dans les fichiers login et regsiter #3, #9, #12, #13,">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
+    <list default="true" id="6cd284f8-ac51-422d-9940-5c45a8f62f2e" name="Changes" comment="fix(controller):#10 Mettre ne requis tous les champs du formulaire d'ajout d'article">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/App/Controllers/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/App/Controllers/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/App/Controllers/Users.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/App/Controllers/Users.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/App/Views/Product/Add.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/App/Views/Product/Add.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,21 +49,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "fix/error-ajout-article",
-    "last_opened_file_path": "C:/Users/ogung/Documents/COURS_CESI_DI_22_24/Projet4-Docker/vide-grenier-en-ligne-master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ogung/Documents/COURS_CESI_DI_22_24/Projet4-Docker/vide-grenier-en-ligne-master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -88,6 +83,8 @@
       <workItem from="1716464107045" duration="20486000" />
       <workItem from="1720170431095" duration="9140000" />
       <workItem from="1720279945953" duration="1231000" />
+      <workItem from="1720511876823" duration="16000" />
+      <workItem from="1720598198283" duration="171000" />
     </task>
     <task id="LOCAL-00001" summary="fix(model):connection string">
       <option name="closed" value="true" />
