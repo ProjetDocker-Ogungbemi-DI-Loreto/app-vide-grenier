@@ -23,7 +23,7 @@
                         <!-- Display flash messages -->
                         {% if flash.error is defined %}
                         {% for message in flash.error %}
-                        <div class="alert alert-danger">{{ message }}</div>
+                        <div class="alert alert-danger flash-message">{{ message }}</div>
                         {% endfor %}
                         {% endif %}
                         <!-- End display flash messages -->
@@ -33,7 +33,7 @@
                                 <div class="form-group">
                                     <label for="e1">Titre</label>
                                     <input type="text" name="name" class="form-control" id="e1"
-                                           placeholder="Jeu de cartes (rare)">
+                                           placeholder="Jeu de carte (rare)">
                                 </div>
                             </div>
                             <div class="col-lg-12">
