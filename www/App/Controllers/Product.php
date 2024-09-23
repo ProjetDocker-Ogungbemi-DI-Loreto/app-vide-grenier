@@ -20,7 +20,6 @@ class Product extends \Core\Controller
     public function indexAction()
     {
         if(isset($_POST['submit'])) {
-
             try {
                 $f = $_POST;
 
