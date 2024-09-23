@@ -4,17 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6cd284f8-ac51-422d-9940-5c45a8f62f2e" name="Changes" comment="fix(controller):#10 Mettre ne requis tous les champs du formulaire d'ajout d'article">
+    <list default="true" id="6cd284f8-ac51-422d-9940-5c45a8f62f2e" name="Changes" comment="fix(App):#7 implémentation de la fonctionnalité se souvenir de moi">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vide-grenier-en-ligne-master.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vide-grenier-en-ligne-master.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/App/Controllers/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/App/Controllers/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/App/Models/Articles.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/App/Models/Articles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/App/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/App/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/App/Views/Product/Add.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/App/Views/Product/Add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/App/Views/Product/Show.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/App/Views/Product/Show.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/App/Views/User/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/App/Views/User/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/App/Views/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/App/Views/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ComposerConfigs">
+    <option name="configs">
+      <option value="$PROJECT_DIR$/www/composer.json" />
+    </option>
+  </component>
   <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
-    <pharConfigPath>$PROJECT_DIR$/www/composer.json</pharConfigPath>
-    <execution />
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable path="composer" />
+    </execution>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -33,6 +49,7 @@
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\xampp\php\php.exe">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/phpmailer/phpmailer" />
       <path value="$PROJECT_DIR$/www/vendor/symfony/deprecation-contracts" />
       <path value="$PROJECT_DIR$/www/vendor/twig/twig" />
       <path value="$PROJECT_DIR$/www/vendor/composer" />
@@ -53,7 +70,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;fix/ajout-annonce-formulaire-contact&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/ogung/Documents/COURS_CESI_DI_22_24/Projet4-Docker/vide-grenier-en-ligne-master&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -85,6 +102,9 @@
       <workItem from="1720279945953" duration="1231000" />
       <workItem from="1720511876823" duration="16000" />
       <workItem from="1720598198283" duration="171000" />
+      <workItem from="1726748173759" duration="36860000" />
+      <workItem from="1727030454107" duration="53000" />
+      <workItem from="1727073806951" duration="32000" />
     </task>
     <task id="LOCAL-00001" summary="fix(model):connection string">
       <option name="closed" value="true" />
@@ -121,6 +141,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fix(model):connection string" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix(model):connection string" />
+    <MESSAGE value="fix(App):#7 implémentation de la fonctionnalité se souvenir de moi" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix(App):#7 implémentation de la fonctionnalité se souvenir de moi" />
   </component>
 </project>

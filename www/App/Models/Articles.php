@@ -60,6 +60,24 @@ class Articles extends Model {
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 
+    public static function getById($id) {
+        $db = static::getDB();
+
+        // Requête avec une jointure entre articles et users
+        $stmt = $db->prepare('
+        SELECT articles.*, users.email, users.username 
+        FROM articles
+        INNER JOIN users ON articles.user_id = users.id
+        WHERE articles.id = ?
+        LIMIT 1');
+
+        $stmt->execute([$id]);
+
+        return $stmt->fetch(\PDO::FETCH_ASSOC); // Retourne un seul résultat
+    }
+
+
+
     /**
      * ?
      * @access public
@@ -151,8 +169,6 @@ class Articles extends Model {
 
         $stmt->execute();
     }
-
-
 
 
 }
