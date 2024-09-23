@@ -21,21 +21,20 @@
                 <div class="l-head">
                     <h1>Connexion</h1>
                 </div>
+                <!-- Display flash messages -->
+                {% if flash.success is defined %}
+                {% for message in flash.success %}
+                <div class="alert alert-success flash-message">{{ message }}</div>
+                {% endfor %}
+                {% endif %}
+
+                {% if flash.error is defined %}
+                {% for message in flash.error %}
+                <div class="alert alert-danger flash-message">{{ message }}</div>
+                {% endfor %}
+                {% endif %}
+                <!-- End display flash messages -->
                 <div class="l-form">
-                    <!-- Display flash messages -->
-                    {% if flash.success is defined %}
-                    {% for message in flash.success %}
-                    <div class="alert alert-success flash-message">{{ message }}</div>
-                    {% endfor %}
-                    {% endif %}
-
-                    {% if flash.error is defined %}
-                    {% for message in flash.error %}
-                    <div class="alert alert-danger flash-message">{{ message }}</div>
-                    {% endfor %}
-                    {% endif %}
-                    <!-- End display flash messages -->
-
                     <form action="" method="post">
                         <div class="form-group">
                             <label for="email">Email</label>

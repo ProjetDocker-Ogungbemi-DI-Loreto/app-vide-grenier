@@ -13,6 +13,7 @@
   <component name="PhpIncludePathManager">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/phpmailer/phpmailer" />
       <path value="$PROJECT_DIR$/www/vendor/symfony/deprecation-contracts" />
       <path value="$PROJECT_DIR$/www/vendor/twig/twig" />
       <path value="$PROJECT_DIR$/www/vendor/composer" />
@@ -20,6 +21,9 @@
       <path value="$PROJECT_DIR$/www/vendor/symfony/polyfill-ctype" />
       <path value="$PROJECT_DIR$/www/vendor/symfony/polyfill-php80" />
     </include_path>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.0">
+    <option name="suggestChangeDefaultLanguageLevel" value="false" />
   </component>
   <component name="PhpStanOptionsConfiguration">
     <option name="transferred" value="true" />
