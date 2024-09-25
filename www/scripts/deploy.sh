@@ -24,10 +24,23 @@ else
 fi
 
 # Checkout on the right brancg and pull the latest changes from the repository
+git reset --hard
 git checkout $BRANCH
 git pull origin $BRANCH
+chmod +x ./www/scripts/*
 
-sed -i '/^\s*root\s*/c\    root /var/www/vide-grenier-$BRANCH/public;' .docker/nginx/site.template
+if [ $BRANCH == "dev" ]; then
+  sed -i '/^\s*root\s*/c\    root /var/www/vide-grenier-dev/public;' .docker/nginx/site.template
+elif [ $BRANCH == "stage" ]; then
+  sed -i '/^\s*root\s*/c\    root /var/www/vide-grenier-stage/public;' .docker/nginx/site.template
+elif [ $BRANCH == "stage" ]; then
+  sed -i '/^\s*root\s*/c\    root /var/www/vide-grenier-main/public;' .docker/nginx/site.template
+else
+  echo "Unknown branch: $BRANCH"
+  sed -i '/^\s*root\s*/c\    root /var/www/vide-grenier/public;' .docker/nginx/site.template
+fi
 
 # Load the environment variables and run docker-compose
-export $(grep -v '^#' $ENV_FILE | xargs) && docker-compose up -d --build
+export $(grep -v '^#' $ENV_FILE | xargs)
+docker compose down -v
+docker compose -f docker-compose.yml up -d --build
