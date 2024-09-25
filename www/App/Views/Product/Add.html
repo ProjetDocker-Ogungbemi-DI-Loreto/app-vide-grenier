@@ -81,7 +81,7 @@
             search: function (qry, callback) {
                 // let's do a custom ajax call
                 $.ajax(
-                    '/api/cities',
+                    '/api/citieslike',
                     {
                         data: { 'query': qry}
                     }
@@ -92,4 +92,11 @@
         }
     });
 </script>
+
+<style>
+    .cityAutoComplete:focus + ul
+    {
+        display: block !important;
+    }
+</style>
 {% endblock %}
