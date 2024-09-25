@@ -35,11 +35,11 @@ $router->add('logout', ['controller' => 'Users', 'action' => 'logout', 'private'
 $router->add('account', ['controller' => 'Users', 'action' => 'account', 'private' => true]);
 $router->add('product', ['controller' => 'Product', 'action' => 'index', 'private' => true]);
 $router->add('product/{id:\d+}', ['controller' => 'Product', 'action' => 'show']);
-$router->add('{controller}/{action}');
+// $router->add('{controller}/{action}');
 
 // Nouvelle route pour la recherche d'articles
+$router->add('api/citieslike', ['controller' => 'Api', 'action' => 'CitiesAutocompleteAction']);
 $router->add('api/search', ['controller' => 'Api', 'action' => 'SearchAction']);
-$router->add('api/citieslike', ['controller' => 'Api', 'action' => 'CitiesAutocomplete']);
 
 // Routes pour les fonctionnalités "À la une" et "Autour de moi"
 $router->add('api/featured', ['controller' => 'Api', 'action' => 'FeaturedAction']);
