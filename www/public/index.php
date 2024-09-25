@@ -35,7 +35,6 @@ $router->add('logout', ['controller' => 'Users', 'action' => 'logout', 'private'
 $router->add('account', ['controller' => 'Users', 'action' => 'account', 'private' => true]);
 $router->add('product', ['controller' => 'Product', 'action' => 'index', 'private' => true]);
 $router->add('product/{id:\d+}', ['controller' => 'Product', 'action' => 'show']);
-//$router->add('product/{id:\d+}', ['controller' => 'Articles', 'action' => 'base']);
 $router->add('{controller}/{action}');
 
 // Nouvelle route pour la recherche d'articles
