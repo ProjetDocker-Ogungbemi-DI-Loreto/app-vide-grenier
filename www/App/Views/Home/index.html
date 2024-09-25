@@ -18,7 +18,7 @@
                                         <i class="cv cvicon-cv-cancel topsearch-close"></i>
                                         <div class="input-group">
                                             <span class="input-group-addon" id="sizing-addon2"><i class="fa fa-search"></i></span>
-                                            <input type="text" class="form-control" name="q" id="searchInput" placeholder="Rechercher par nom d'article, ville ou description" aria-describedby="sizing-addon2">
+                                            <input type="text" class="form-control" name="name" id="searchInput" placeholder="Rechercher par nom d'article, ville ou description" aria-describedby="sizing-addon2">
                                         </div>
                                     </div>
                                 </form>
@@ -103,7 +103,7 @@
 
     function searchProducts(query) {
         $.ajax({
-            url: "/api/search",
+            url: "/api/searchArticles",
             method: "GET",
             data: { q: query },
             success: function(response) {

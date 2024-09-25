@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6cd284f8-ac51-422d-9940-5c45a8f62f2e" name="Changes" comment="fix(App):#23 Barre de recherche et filtrage des annonces à la une et autour de moi">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vide-grenier-en-ligne-master.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vide-grenier-en-ligne-master.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/App/Views/Product/Show.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/App/Views/Product/Show.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/App/Views/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/App/Views/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/www/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/App/Controllers/Api.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/App/Controllers/Api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/App/Views/Home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/App/Views/Home/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/public/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/public/style/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/public/style/main.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +64,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "fix/UI-design",
+    "git-widget-placeholder": "feat/add-route",
     "last_opened_file_path": "C:/Users/ogungjer/Documents/ProjetDocker/app-vide-grenier/www/sql",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -129,7 +125,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716552819726</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fix(App,Views,style):#31 amelioration de l'interface utilisateur">
+      <option name="closed" value="true" />
+      <created>1727267255785</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1727267255785</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,6 +154,7 @@
     <MESSAGE value="fix(model):connection string" />
     <MESSAGE value="fix(App):#7 implémentation de la fonctionnalité se souvenir de moi" />
     <MESSAGE value="fix(App):#23 Barre de recherche et filtrage des annonces à la une et autour de moi" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix(App):#23 Barre de recherche et filtrage des annonces à la une et autour de moi" />
+    <MESSAGE value="fix(App,Views,style):#31 amelioration de l'interface utilisateur" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix(App,Views,style):#31 amelioration de l'interface utilisateur" />
   </component>
 </project>
