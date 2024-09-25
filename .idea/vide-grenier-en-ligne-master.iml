@@ -6,6 +6,9 @@
       <sourceFolder url="file://$MODULE_DIR$/Core" isTestSource="false" packagePrefix="Core\" />
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/www/App" isTestSource="false" packagePrefix="App\" />
+      <sourceFolder url="file://$MODULE_DIR$/www/Core" isTestSource="false" packagePrefix="Core\" />
+      <sourceFolder url="file://$MODULE_DIR$/www/PHPMailer/src" isTestSource="false" packagePrefix="PHPMailer\PHPMailer\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/www/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/www/vendor/symfony/deprecation-contracts" />
