@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6cd284f8-ac51-422d-9940-5c45a8f62f2e" name="Changes" comment="fix(App):#23 Barre de recherche et filtrage des annonces à la une et autour de moi">
-      <change afterPath="$PROJECT_DIR$/www/scripts/dump_db.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/www/scripts/restore_db.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/www/sql/db-vide-grenier.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vide-grenier-en-ligne-master.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vide-grenier-en-ligne-master.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/App/Views/Product/Show.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/App/Views/Product/Show.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/App/Views/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/App/Views/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/www/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/public/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/public/style/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/public/style/main.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,13 +47,13 @@
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\xampp\php\php.exe">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
-      <path value="$PROJECT_DIR$/vendor/phpmailer/phpmailer" />
       <path value="$PROJECT_DIR$/www/vendor/symfony/deprecation-contracts" />
       <path value="$PROJECT_DIR$/www/vendor/twig/twig" />
       <path value="$PROJECT_DIR$/www/vendor/composer" />
       <path value="$PROJECT_DIR$/www/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/www/vendor/symfony/polyfill-ctype" />
-      <path value="$PROJECT_DIR$/www/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/www/vendor/symfony/polyfill-php81" />
+      <path value="$PROJECT_DIR$/www/vendor/phpmailer/phpmailer" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -64,7 +68,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "feat/script",
+    "git-widget-placeholder": "fix/UI-design",
     "last_opened_file_path": "C:/Users/ogungjer/Documents/ProjetDocker/app-vide-grenier/www/sql",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",

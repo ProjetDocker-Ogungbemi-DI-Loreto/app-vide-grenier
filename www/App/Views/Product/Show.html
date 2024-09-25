@@ -33,7 +33,16 @@
                 <div class="author">
                     <div class="author-head">
                         <div class="sv-name">
-                            <div><a href="#">{{ article.username }}</a></div>
+                            <div><h4><a href="#">{{ article.username }}</a></h4></div>
+                            <div class="info-content">
+                                <h6><strong>Description : </strong> {{article.description}} </h6>
+                            </div>
+                            <div class="info-content">
+                                <h6><strong>Date de publication de l'annonce : </strong> {{article.published_date}}</h6>
+                            </div>
+                            <div class="info-content">
+                                <h6> <strong>Ville de publication : </strong>  {{article.ville}}</h6>
+                            </div>
                         </div>
                     </div>
 
@@ -43,21 +52,13 @@
                             {{ article.views }} vues
                         </div>
                     </div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="info">
-                    <div class="info-content">
-                        <h4>Description:</h4>
-                        <p>{{article.description}}</p>
-                    </div>
-                    <div class="u-area mt-small">
-                        <a name="submit" href="mailto:{{article.email}}" class="btn btn-primary u-btn">Contacter {{article
-                            .username}}
-                        </a>
+                    <div class="clearfix">
 
                     </div>
                 </div>
-            </div>
+                <div class="u-area mt-small">
+                    <a name="submit" href="mailto:{{article.email}}" class="btn btn-primary u-btn">Contactez {{article .username}}</a>
+                </div>
 
 
             <!-- right column -->
@@ -70,7 +71,7 @@
                         {% for suggestion in suggestions %}
                         <div class="col-lg-12 col-sm-12">
                             <div class="v-desc">
-                                <a href="{{ ('/product/' ~ suggestion.id) }}">{{suggestion.name}}</a>
+                                <h4><a href="{{ ('/product/' ~ suggestion.id) }}">{{suggestion.name}}</a></h4>
                             </div>
 
                             <div class="v-views">
