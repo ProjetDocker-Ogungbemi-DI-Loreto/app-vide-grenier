@@ -38,11 +38,11 @@ class Api extends \Core\Controller
     }
 
     /**
-     * Recherche des villes
+     * Recherche des villes dans la table ville_frances
      */
-    public function CitiesAction()
+    public function Cities()
     {
-        $query = $_GET['query'] ?? '';
+        $query = $_GET['ville_nom_reel'] ?? '';
 
         try {
             if ($query) {
@@ -62,9 +62,9 @@ class Api extends \Core\Controller
     /**
      * Recherche d'articles
      */
-    public function SearchAction()
+    public function SearchArticles()
     {
-        $query = $_GET['q'] ?? '';
+        $query = $_GET['name'] ?? '';
 
         try {
             if ($query) {
@@ -87,7 +87,7 @@ class Api extends \Core\Controller
     /**
      * Récupère les articles "À la une" (les plus populaires).
      */
-    public function FeaturedAction()
+    public function Featured()
     {
         try {
             $articles = Articles::getFeatured();
@@ -107,9 +107,9 @@ class Api extends \Core\Controller
     /**
      * Récupère les articles "Autour de moi" en fonction de la ville de l'utilisateur.
      */
-    public function NearbyAction()
+    public function Nearby()
     {
-        $city = $_GET['city'] ?? '';
+        $city = $_GET['ville'] ?? '';
 
         try {
             if ($city) {
