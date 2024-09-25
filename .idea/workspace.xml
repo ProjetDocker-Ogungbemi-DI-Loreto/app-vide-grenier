@@ -4,17 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6cd284f8-ac51-422d-9940-5c45a8f62f2e" name="Changes" comment="fix(App):#7 implémentation de la fonctionnalité se souvenir de moi">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="6cd284f8-ac51-422d-9940-5c45a8f62f2e" name="Changes" comment="fix(App):#1 ajout d'annonce">
       <change beforePath="$PROJECT_DIR$/.idea/vide-grenier-en-ligne-master.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vide-grenier-en-ligne-master.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/App/Controllers/Api.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/App/Controllers/Api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/App/Controllers/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/App/Controllers/Product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/App/Models/Articles.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/App/Models/Articles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/App/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/App/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/App/Views/Product/Add.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/App/Views/Product/Add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/App/Views/Home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/App/Views/Home/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/App/Views/Product/Show.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/App/Views/Product/Show.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/App/Views/User/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/App/Views/User/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/App/Views/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/App/Views/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/public/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +69,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;fix/ajout-annonce-formulaire-contact&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;fix/barre-recherche&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/ogung/Documents/COURS_CESI_DI_22_24/Projet4-Docker/vide-grenier-en-ligne-master&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -105,6 +104,9 @@
       <workItem from="1726748173759" duration="36860000" />
       <workItem from="1727030454107" duration="53000" />
       <workItem from="1727073806951" duration="32000" />
+      <workItem from="1727123969583" duration="5805000" />
+      <workItem from="1727159755507" duration="15286000" />
+      <workItem from="1727205168507" duration="17649000" />
     </task>
     <task id="LOCAL-00001" summary="fix(model):connection string">
       <option name="closed" value="true" />
