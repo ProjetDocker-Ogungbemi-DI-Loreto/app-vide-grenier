@@ -39,10 +39,13 @@ $router->add('{controller}/{action}');
 
 // Nouvelle route pour la recherche d'articles
 $router->add('api/search', ['controller' => 'Api', 'action' => 'SearchAction']);
+$router->add('api/citieslike', ['controller' => 'Api', 'action' => 'CitiesAutocomplete']);
 
 // Routes pour les fonctionnalités "À la une" et "Autour de moi"
 $router->add('api/featured', ['controller' => 'Api', 'action' => 'FeaturedAction']);
 $router->add('api/nearby', ['controller' => 'Api', 'action' => 'NearbyAction']);
+
+$router->add('{controller}/{action}');
 
 /*
  * Gestion des erreurs dans le routing

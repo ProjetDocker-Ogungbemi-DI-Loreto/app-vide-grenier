@@ -37,6 +37,17 @@ class Api extends \Core\Controller
         }
     }
 
+    public function CitiesAutocompleteAction(){
+        
+        if(!isset($_GET['query']) || $_GET['query'] == "")
+            echo json_encode([]);
+
+        $cities = Cities::searchLike($_GET['query']);
+
+        header('Content-Type: application/json');
+        echo json_encode($cities);
+    }
+
     /**
      * Recherche des villes
      */
