@@ -38,7 +38,7 @@ $router->add('product/{id:\d+}', ['controller' => 'Product', 'action' => 'show']
 // $router->add('{controller}/{action}');
 
 // Nouvelle route pour la recherche d'articles
-$router->add('api/citieslike', ['controller' => 'Api', 'action' => 'CitiesAutocompleteAction']);
+$router->add('api/citieslike', ['controller' => 'Api', 'action' => 'CitiesAutocomplete']);
 $router->add('api/search', ['controller' => 'Api', 'action' => 'SearchAction']);
 
 // Routes pour les fonctionnalités "À la une" et "Autour de moi"
