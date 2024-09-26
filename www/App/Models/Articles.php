@@ -140,8 +140,8 @@ class Articles extends Model {
      * @return string|boolean
      * @throws Exception
      */
-    public static function save($data) {
-        $db = static::getDB();
+    public static function save($data, $db = null) {
+        $db = $db ?? static::getDB();  // Utilise getDB si aucune DB n'est fournie
 
         $stmt = $db->prepare('INSERT INTO articles(name, description, user_id, published_date) VALUES (:name, :description, :user_id,:published_date)');
 
