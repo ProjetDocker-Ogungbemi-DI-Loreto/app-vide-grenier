@@ -49,8 +49,8 @@ fi
 
 # Load the environment variables and run docker-compose
 export $(grep -v '^#' $ENV_FILE | xargs)
-docker compose down -v
-docker compose -f docker-compose.yml up -d --build
+docker compose -p $ENV down -v
+docker compose -f docker-compose.yml -p $ENV up -d --build
 
 sleep 10
 
