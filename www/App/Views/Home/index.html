@@ -12,14 +12,25 @@
                     <div class="cb-header">
                         <div class="row">
                             <div class="col-lg-10 col-sm-10 col-xs-8">
+
+                                <form id="searchForm" action="#" method="GET">
+                                    <div class="topsearch">
+                                        <i class="cv cvicon-cv-cancel topsearch-close"></i>
+                                        <div class="input-group">
+                                            <span class="input-group-addon" id="sizing-addon2"><i class="fa fa-search"></i></span>
+                                            <input type="text" class="form-control" name="name" id="searchInput" placeholder="Rechercher par nom d'article, ville ou description" aria-describedby="sizing-addon2">
+                                        </div>
+                                    </div>
+                                </form>
+
                                 <ul class="list-inline">
                                     <li>
-                                        <a href="#" class="color-active">
+                                        <a href="#" class="color-active" onclick="getFeaturedProducts()"> <!-- Fonction "À la une" -->
                                             <span class="visible-xs">À la une</span>
                                             <span class="hidden-xs">À la une</span>
                                         </a>
                                     </li>
-                                    <li><a href="#">Autour de moi</a></li>
+                                    <li><a href="#" data-toggle="modal" data-target="#locationModal">Autour de moi</a></li>
                                 </ul>
                             </div>
                             <div class="col-lg-2 col-sm-2 col-xs-4">
@@ -28,12 +39,8 @@
                                         Filtrer par <span class="caret"></span>
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a onclick="getProductsAndRender('views')"><i
-                                                class="cv cvicon-cv-calender"></i>
-                                            Popularité</a></li>
-                                        <li><a onclick="getProductsAndRender('date')"><i
-                                                class="cv cvicon-cv-calender"></i>
-                                            Récent</a></li>
+                                        <li><a href="#" onclick="getProductsAndRender('views')"><i class="cv cvicon-cv-relevant"></i> Popularité</a></li>
+                                        <li><a href="#" onclick="getProductsAndRender('date')"><i class="cv cvicon-cv-calender"></i> Plus récent</a></li>
                                     </ul>
                                 </div>
                                 <div class="clearfix"></div>
@@ -52,44 +59,154 @@
     </div>
 </div>
 
+
+<div class="modal fade" id="locationModal" tabindex="-1" role="dialog" aria-labelledby="locationModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="locationModalLabel">Entrez une ville</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="locationForm">
+                    <div class="form-group">
+                        <label for="cityInput">Ville</label>
+                        <input type="text" class="form-control" id="cityInput" placeholder="Saisir une ville">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                <button type="button" class="btn btn-primary" onclick="getProductsByCity()">Rechercher</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Fin du Modal -->
+
 {% endblock %}
 
-
 {% block javascript %}
-    <script type="text/javascript">
+<script type="text/javascript">
 
-        function getProductsAndRender(option = ''){
-            $.ajax({
-                url: "/api/products" + '?sort=' + option,
-            }).done(function(result) {
+
+    document.getElementById('searchInput').addEventListener('input', function() {
+        const query = this.value;
+        if (query.length > 2) {
+            searchProducts(query);
+        } else {
+            getProductsAndRender();
+        }
+    });
+
+    function searchProducts(query) {
+        $.ajax({
+            url: "/api/searchArticles",
+            method: "GET",
+            data: { name: query },
+            success: function(response) {
                 $('#articlelist').empty();
-                for(let i = 0; i < result.length; i++){
-                    renderProduct(result[i])
+                renderSearchResults(response);
+            },
+            error: function(error) {
+                console.error("Erreur lors de la recherche", error);
+            }
+        });
+    }
+
+    function getFeaturedProducts() {
+        $.ajax({
+            url: "/api/featured?sort=featured",
+            success: function(result) {
+                $('#articlelist').empty();
+                renderSearchResults(result);
+            },
+            error: function(error) {
+                console.error("Erreur lors de la recherche ", error);
+            }
+        });
+    }
+
+
+    function getProductsByCity() {
+        const city = $('#cityInput').val();
+        if(city) {
+            $.ajax({
+                url: `/api/nearby?city=${city}`,
+                success: function(result) {
+                    $('#articlelist').empty();
+
+                    if(result.length > 0){
+                        renderSearchResults(result);
+                        $('#locationModal').modal('hide');
+                    }else {
+                        $('#locationModal').modal('hide');
+                        $('#articlelist').append('<p class="text-danger">Aucun article trouvé pour la ville "' + city + '".</p>');
+
+                    }
+                },
+                error: function(error) {
+                    console.error("Error fetching products by city", error);
+                    $('#articlelist').empty();
+                    $('#articlelist').append('<p class="text-danger">Erreur lors de la recherche pour la ville "' + city + '". Veuillez réessayer.</p>');
+                    $('#locationModal').modal('hide');
                 }
             });
+        } else {
+            alert("Veuillez entrer une ville.");
         }
+    }
 
-        function renderProduct($product){
-             $('<div class="col-lg-4 col-sm-6 articleitem" id="article-pattern">' +
-                '                                <div class="b-article">' +
-                '                                    <div class="v-img">' +
-                '                                        <a href="/product/'+ $product.id + '">' +
-                '                                            <img src="/storage/'+ $product.picture +'" alt=""></a>' +
-                '                                    </div>' +
-                '                                    <div class="v-desc">' +
-                '                                        <a href="/product/'+ $product.id + '">'+ $product.name+'</a>' +
-                '                                    </div>' +
-                '                                    <p>'+ $product.description.slice(0, 20) + '...</p>' +
-                '                                    <div class="v-views">' +
-                '                                        '+$product.views+' vues' +
-                '                                    </div>' +
-                '                                </div>' +
-                '</div>')
-             .appendTo($('#articlelist'));
+
+    function renderSearchResults(products) {
+        const articleList = $('#articlelist');
+        articleList.empty();
+
+        if (products.length > 0) {
+            products.forEach(product => {
+                renderProduct(product);
+            });
+        } else {
+            articleList.append('<p>Aucun résultat trouvé</p>');
         }
+    }
 
-        $( document ).ready(function() {
-            getProductsAndRender();
+    function getProductsAndRender(option = '') {
+        $.ajax({
+            url: "/api/products" + '?sort=' + option,
+        }).done(function(result) {
+            $('#articlelist').empty();
+            for (let i = 0; i < result.length; i++) {
+                renderProduct(result[i]);
+            }
         });
-    </script>
+    }
+
+    // Render a single product
+    function renderProduct(product) {
+        $('<div class="col-lg-4 col-sm-6 articleitem" id="article-pattern">' +
+            '                                <div class="b-article">' +
+            '                                    <div class="v-img">' +
+            '                                        <a href="/product/' + product.id + '">' +
+            '                                            <img src="/storage/' + product.picture + '" alt=""></a>' +
+            '                                    </div>' +
+            '                                    <div class="v-desc">' +
+            '                                        <a href="/product/' + product.id + '">' + product.name + '</a>' +
+            '                                    </div>' +
+            '                                    <p>' + product.description.slice(0, 20) + '...</p>' +
+            '                                    <div class="v-views">' +
+            '                                        ' + product.views + ' vues' +
+            '                                    </div>' +
+            '                                </div>' +
+            '</div>')
+            .appendTo($('#articlelist'));
+    }
+
+    $(document).ready(function () {
+        getProductsAndRender();
+    });
+
+</script>
 {% endblock %}

@@ -1301,6 +1301,8 @@ if (typeof jQuery === 'undefined') {
     var $tip = $(this.$tip)
     var e    = $.Event('hide.bs.' + this.type)
 
+    console.log(that);
+
     function complete() {
       if (that.hoverState != 'in') $tip.detach()
       if (that.$element) { // TODO: Check whether guarding this code with this `if` is really necessary.

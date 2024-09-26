@@ -28,7 +28,7 @@ class Articles extends Model {
             case 'views':
                 $query .= ' ORDER BY articles.views DESC';
                 break;
-            case 'data':
+            case 'date':
                 $query .= ' ORDER BY articles.published_date DESC';
                 break;
             case '':
@@ -59,6 +59,24 @@ class Articles extends Model {
 
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
+
+    public static function getById($id) {
+        $db = static::getDB();
+
+        // Requête avec une jointure entre articles et users
+        $stmt = $db->prepare('
+        SELECT articles.*, users.email, users.username 
+        FROM articles
+        INNER JOIN users ON articles.user_id = users.id
+        WHERE articles.id = ?
+        LIMIT 1');
+
+        $stmt->execute([$id]);
+
+        return $stmt->fetch(\PDO::FETCH_ASSOC); // Retourne un seul résultat
+    }
+
+
 
     /**
      * ?
@@ -116,7 +134,6 @@ class Articles extends Model {
     }
 
 
-
     /**
      * ?
      * @access public
@@ -153,6 +170,50 @@ class Articles extends Model {
     }
 
 
+    public static function search($query) {
+        $db = static::getDB();
 
+        // Requête SQL pour chercher dans plusieurs colonnes
+        $stmt = $db->prepare("
+        SELECT * FROM articles 
+        WHERE name LIKE :query 
+        OR description LIKE :query 
+        OR ville LIKE :query
+    ");
+
+        $searchTerm = "%".$query."%";
+        $stmt->bindParam(':query', $searchTerm);
+        $stmt->execute();
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    public static function getByCity($city)
+    {
+        $db = static::getDB();
+
+        $stmt = $db->prepare('
+        SELECT * FROM articles 
+        WHERE ville = :city 
+        ORDER BY published_date DESC');  // Articles les plus récents d'abord
+
+        $stmt->bindParam(':city', $city);
+        $stmt->execute();
+
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+
+    public static function getFeatured()
+    {
+        $db = static::getDB();
+
+        $stmt = $db->prepare('
+        SELECT * FROM articles 
+        ORDER BY views DESC 
+        LIMIT 10');  // On limite à 10 articles à la une
+
+        $stmt->execute();
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
 
 }

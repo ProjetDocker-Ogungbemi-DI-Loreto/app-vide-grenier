@@ -3,40 +3,53 @@ services:
     image: nginx:1.25-alpine
     container_name : ${PROJECT_NAME}_nginx
     ports: 
-      - "80:80"
+      - "${WEB_PORT}:80"
     volumes: 
-      - "./www:/var/www/vide-grenier:rw"
+      - "./www:/var/www/${PROJECT_NAME}:rw"
       - ".docker/nginx/site.template:/etc/nginx/conf.d/site.template:ro"
     environment:
       - PROJECT_NAME=${PROJECT_NAME}
     command: sh -c "envsubst '$$PROJECT_NAME' < /etc/nginx/conf.d/site.template > /etc/nginx/conf.d/default.conf && exec nginx -g 'daemon off;'"
+    networks:
+      - vide-grenier_network
+
   php:
     build: .docker/php
     container_name: ${PROJECT_NAME}_php
     working_dir: /var/www/${PROJECT_NAME}
     volumes:
-      - "./www:/var/www/vide-grenier:rw"
+      - "./www:/var/www/${PROJECT_NAME}:rw"
     command: bash -c "composer install && php-fpm"
+    networks:
+      - vide-grenier_network
 
   db:
     image: mysql:8
     container_name: ${PROJECT_NAME}_db
     environment:
-      MYSQL_DATABASE: "db-vide-grenier"
-      MYSQL_USER: "vide-grenier"
-      MYSQL_PASSWORD: "vide-grenier"
-      MYSQL_ROOT_PASSWORD: "root"
-
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     volumes:
       - "bdd_data:/var/lib/mysql"
-
+    networks:
+      - vide-grenier_network
 
   adminer:
     image: adminer:latest
     container_name: ${PROJECT_NAME}_adminer
     ports:
-      - "8080:8080"
+      - "${ADMINER_PORT}:8080"
     depends_on:
       - db
+    networks:
+      - vide-grenier_network
+
 volumes:
   bdd_data:
+    name: "${PROJECT_NAME}_bdd_data"
+
+networks:
+  vide-grenier_network:
+    name: "${PROJECT_NAME}_network"

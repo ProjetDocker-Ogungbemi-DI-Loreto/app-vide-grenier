@@ -29,12 +29,24 @@ $router = new Core\Router();
 
 // Add the routes
 $router->add('', ['controller' => 'Home', 'action' => 'index']);
-$router->add('login', ['controller' => 'User', 'action' => 'login']);
-$router->add('register', ['controller' => 'User', 'action' => 'register']);
-$router->add('logout', ['controller' => 'User', 'action' => 'logout', 'private' => true]);
-$router->add('account', ['controller' => 'User', 'action' => 'account', 'private' => true]);
+$router->add('login', ['controller' => 'Users', 'action' => 'login']);
+$router->add('register', ['controller' => 'Users', 'action' => 'register']);
+$router->add('logout', ['controller' => 'Users', 'action' => 'logout', 'private' => true]);
+$router->add('account', ['controller' => 'Users', 'action' => 'account', 'private' => true]);
 $router->add('product', ['controller' => 'Product', 'action' => 'index', 'private' => true]);
 $router->add('product/{id:\d+}', ['controller' => 'Product', 'action' => 'show']);
+
+// Nouvelle route pour la recherche d'articles
+$router->add('api/searchArticles', ['controller' => 'Api', 'action' => 'SearchArticles']);
+$router->add('api/citieslike', ['controller' => 'Api', 'action' => 'CitiesAutocomplete']);
+
+// Routes pour les fonctionnalités "À la une" et "Autour de moi"
+$router->add('api/featured', ['controller' => 'Api', 'action' => 'Featured']);
+$router->add('api/nearby', ['controller' => 'Api', 'action' => 'Nearby']);
+
+$router->add('api/products', ['controller' => 'Api', 'action' => 'Products']);
+$router->add('api/cities', ['controller' => 'Api', 'action' => 'Cities']);
+
 $router->add('{controller}/{action}');
 
 /*
