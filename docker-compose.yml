@@ -11,7 +11,7 @@ services:
       - PROJECT_NAME=${PROJECT_NAME}
     command: sh -c "envsubst '$$PROJECT_NAME' < /etc/nginx/conf.d/site.template > /etc/nginx/conf.d/default.conf && exec nginx -g 'daemon off;'"
     networks:
-          - ${PROJECT_NAME}_network
+      - vide-grenier_network
 
   php:
     build: .docker/php
@@ -21,7 +21,7 @@ services:
       - "./www:/var/www/${PROJECT_NAME}:rw"
     command: bash -c "composer install && php-fpm"
     networks:
-      - ${PROJECT_NAME}_network
+      - vide-grenier_network
 
   db:
     image: mysql:8
@@ -32,9 +32,9 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     volumes:
-      - "${PROJECT_NAME}_bdd_data:/var/lib/mysql"
+      - "bdd_data:/var/lib/mysql"
     networks:
-      - ${PROJECT_NAME}_network
+      - vide-grenier_network
 
   adminer:
     image: adminer:latest
@@ -44,10 +44,12 @@ services:
     depends_on:
       - db
     networks:
-      - ${PROJECT_NAME}_network
+      - vide-grenier_network
 
 volumes:
-  ${PROJECT_NAME}_bdd_data:
+  bdd_data:
+    name: "${PROJECT_NAME}_bdd_data"
 
 networks:
-  ${PROJECT_NAME}_network:
+  vide-grenier_network:
+    name: "${PROJECT_NAME}_network"
