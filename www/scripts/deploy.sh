@@ -52,9 +52,14 @@ export $(grep -v '^#' $ENV_FILE | xargs)
 docker compose down -v
 docker compose -f docker-compose.yml up -d --build
 
-sleep 20
+sleep 10
 
 docker cp ./www/scripts/restore_db.sh  $DB_CONTAINER:/restore_db.sh
 docker cp ./www/scripts/restore_db.sh  $DB_CONTAINER:/dump_db.sh
 docker cp ./www/sql/db-vide-grenier.sql $DB_CONTAINER:/init.sql
+
+sleep 2
+
 docker exec -it $DB_CONTAINER sh -c "/restore_db.sh /init.sql"
+echo "If it failed, execute it manually :"
+echo "sudo docker exec -it "$DB_CONTAINER" sh -c \"/restore_db.sh /init.sql\""
