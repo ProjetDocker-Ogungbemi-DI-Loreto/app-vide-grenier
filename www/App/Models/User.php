@@ -16,8 +16,8 @@ class User extends Model {
     /**
      * Crée un utilisateur
      */
-    public static function createUser($data) {
-        $db = static::getDB();
+    public static function createUser($data, $db = null) {
+        $db = $db ?? static::getDB();
 
         $stmt = $db->prepare('INSERT INTO users(username, email, password, salt) VALUES (:username, :email, :password,:salt)');
 
