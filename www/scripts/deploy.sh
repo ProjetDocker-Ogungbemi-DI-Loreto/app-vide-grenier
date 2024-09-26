@@ -29,6 +29,9 @@ git checkout $BRANCH
 git pull origin $BRANCH
 chmod +x ./www/scripts/*
 
+rm .env
+cp $ENV_FILE .env
+
 if [ $BRANCH == "dev" ]; then
   sed -i '/^\s*root\s*/c\    root /var/www/vide-grenier-dev/public;' .docker/nginx/site.template
 elif [ $BRANCH == "stage" ]; then
@@ -44,3 +47,8 @@ fi
 export $(grep -v '^#' $ENV_FILE | xargs)
 docker compose down -v
 docker compose -f docker-compose.yml up -d --build
+
+docker cp ./www/scripts/restore_db.sh  vide-grenier-$BRANCH_db:/restore_db.sh
+docker cp ./www/scripts/restore_db.sh  vide-grenier-$BRANCH_db:/dump_db.sh
+docker cp ./www/sql/db-vide-grenier.sql vide-grenier-$BRANCH_db:/init.sql
+docker exec -it vide-grenier-dev_$BRANCH_db sh -c "/restore_db.sh /init.sql"
