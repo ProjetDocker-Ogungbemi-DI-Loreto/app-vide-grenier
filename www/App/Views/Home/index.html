@@ -105,7 +105,7 @@
         $.ajax({
             url: "/api/searchArticles",
             method: "GET",
-            data: { q: query },
+            data: { name: query },
             success: function(response) {
                 $('#articlelist').empty();
                 renderSearchResults(response);

@@ -1,3 +1,4 @@
+#!/bin/bash
 
 # Variables de connexion MySQL
 DB_HOST="localhost"

@@ -33,7 +33,7 @@ if [ $BRANCH == "dev" ]; then
   sed -i '/^\s*root\s*/c\    root /var/www/vide-grenier-dev/public;' .docker/nginx/site.template
 elif [ $BRANCH == "stage" ]; then
   sed -i '/^\s*root\s*/c\    root /var/www/vide-grenier-stage/public;' .docker/nginx/site.template
-elif [ $BRANCH == "stage" ]; then
+elif [ $BRANCH == "main" ]; then
   sed -i '/^\s*root\s*/c\    root /var/www/vide-grenier-main/public;' .docker/nginx/site.template
 else
   echo "Unknown branch: $BRANCH"
