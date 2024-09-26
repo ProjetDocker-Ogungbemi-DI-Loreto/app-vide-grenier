@@ -19,6 +19,8 @@
     <link href="/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/font-circle-video.css" rel="stylesheet">
 
+    <link rel="manifest" href="/manifest.json">
+
     <!-- font-family: 'Hind', sans-serif; -->
     <link href='https://fonts.googleapis.com/css?family=Hind:400,300,500,600,700|Hind+Guntur:300,400,500,700' rel='stylesheet' type='text/css'>
     {% block style %}
@@ -179,6 +181,17 @@
             }, 6000); // Time before fade-out (6 seconds)
         });
     });
+</script>
+<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+            console.log('Service Worker registered with scope:', registration.scope);
+        }).catch(function(error) {
+            console.log('Service Worker registration failed:', error);
+        });
+        });
+    }
 </script>
 {% endblock %}
 
